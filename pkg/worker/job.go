@@ -1,6 +1,6 @@
 package worker
 
 type Job struct {
-	JobId string
-	Value int
+	JobId int
+	Value string
 }

@@ -15,7 +15,7 @@ type Pool struct {
 	Size int
 	Kill chan struct{}
 	Jobs chan Job
-	wg    sync.WaitGroup
+	wg   sync.WaitGroup
 }
 
 func NewPool(size int) *Pool {
@@ -27,16 +27,16 @@ func NewPool(size int) *Pool {
 	return pool
 }
 func (p *Pool) Resize(n int) {
-	fmt.Println(p.Size,n)
+	fmt.Println(p.Size, n)
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
-	if p.Size<n{
+	if p.Size < n {
 		for p.Size < n {
 			p.Size++
 			p.wg.Add(1)
 			go p.worker(p.Size)
 		}
-	}else {
+	} else {
 		for p.Size > n {
 			p.Size--
 			p.Kill <- struct{}{}
@@ -44,20 +44,19 @@ func (p *Pool) Resize(n int) {
 	}
 }
 
-
 func (p *Pool) worker(id int) {
 	defer p.wg.Done()
-	fmt.Println("Starting worker id:",id)
+	fmt.Println("Starting worker id:", id)
 	for {
 		select {
 		case j, ok := <-p.Jobs:
 			if !ok {
 				return
 			}
-			fmt.Println("worker no:",id)
+			fmt.Println("worker no:", id)
 			j.Execute()
 		case <-p.Kill:
-			fmt.Println("Killing worker:",id)
+			fmt.Println("Killing worker:", id)
 			return
 		}
 	}
@@ -67,12 +66,11 @@ func (p *Pool) Wait() {
 	p.wg.Wait()
 }
 
-
 func (p Pool) AddTask(job Job) {
 	fmt.Println("here1")
 	p.Jobs <- job
 }
 
 func (j Job) Execute() {
-	fmt.Printf("Job id is %d Job value is %s", j.Id,j.Val)
+	fmt.Printf("Job id is %d Job value is %s", j.Id, j.Val)
 }

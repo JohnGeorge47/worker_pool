@@ -27,12 +27,13 @@ func (w *Worker) Start() {
 		w.WorkerQueue <- w.Work
 		select {
 		case work := <-w.Work:
-			job_details := fmt.Sprintf("The Job id is %s and value is %s", work.JobId, work.Value)
-			time.Sleep(5*time.Second)
-			worker_details := fmt.Sprintf("The worker id is %s", w.ID)
+			job_details := fmt.Sprintf("The Job id is %d and value is %s", work.JobId, work.Value)
+			time.Sleep(5 * time.Second)
+			worker_details := fmt.Sprintf("The worker id is %d", w.ID)
 			fmt.Println(job_details, worker_details)
 		case <-w.KillChan:
-			fmt.Printf("worker %d stopping", w.ID)
+			fmt.Println("worker stopping", w.ID)
+			close(w.Work)
 			return
 		}
 	}()
