@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72d1a326-3928-46c9-9b6f-30d62bc9f522" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/worker_pool_v2/worker_pool.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/http/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/http/server.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/collector.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/collector.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/dispatcher/dispatcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/dispatcher/dispatcher.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/worker/job.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/worker/job.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/worker/worker.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/worker/worker.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/worker_pool/worker_pool.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/worker_pool/worker_pool.go" afterDir="false" />
     </list>
@@ -59,6 +58,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="457" y="192" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595131338485">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state x="457" y="192" key="#com.intellij.execution.impl.EditConfigurationsDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1595131338485" />
+    <state x="464" y="66" key="CommitChangelistDialog2" timestamp="1595134072695">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state x="464" y="66" key="CommitChangelistDialog2/65.24.1855.1056@65.24.1855.1056" timestamp="1595134072695" />
     <state x="730" y="242" key="FileChooserDialogImpl" timestamp="1595000155611">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>

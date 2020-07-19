@@ -16,7 +16,7 @@ func NewWorker(id int, workerQueue chan chan Job) Worker {
 	worker := Worker{
 		ID:          id,
 		KillChan:    make(chan struct{}),
-		Work:        make(chan Job),
+		Work:        make(chan Job,100),
 		WorkerQueue: workerQueue,
 	}
 	return worker
